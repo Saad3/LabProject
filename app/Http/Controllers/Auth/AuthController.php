@@ -79,7 +79,7 @@ class AuthController extends Controller
             'gender'=>$data['gender'],
             'date'=>$data['date'],
             'country'=>$data['country'],
-            'city'=>$data['city'],
+            'city'=>$data['city'] ,
 
 
         ]);
