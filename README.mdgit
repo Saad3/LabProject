@@ -1,0 +1,1 @@
+"# LabProjectTest"  initgit add README.mdgit commit -m "first commit"git remote add origin https://github.com/Saad3/LabProjectTest.gitgit push -u origin master
