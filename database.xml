@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.5.1
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Mar 23, 2016 at 09:55 AM
+- Server version: 10.1.10-MariaDB
+- PHP Version: 7.0.4
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="project" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="books">
+                CREATE TABLE `books` (
+                  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                  `book_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `book_author` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `book_owner` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="migrations">
+                CREATE TABLE `migrations` (
+                  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `batch` int(11) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="password_resets">
+                CREATE TABLE `password_resets` (
+                  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                  KEY `password_resets_email_index` (`email`),
+                  KEY `password_resets_token_index` (`token`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="users">
+                CREATE TABLE `users` (
+                  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `date` date NOT NULL,
+                  `gender` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `country` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `city` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+                  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  PRIMARY KEY (`id`,`username`),
+                  UNIQUE KEY `email` (`email`,`username`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'project'
+    -->
+    <database name="project">
+        <!-- Table books -->
+        <!-- Table migrations -->
+        <table name="migrations">
+            <column name="migration">2014_10_12_000000_create_users_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="migration">2014_10_12_100000_create_password_resets_table</column>
+            <column name="batch">1</column>
+        </table>
+        <table name="migrations">
+            <column name="migration">2016_03_18_115204_create_books_table</column>
+            <column name="batch">1</column>
+        </table>
+        <!-- Table password_resets -->
+        <table name="password_resets">
+            <column name="email">sa.alsahli@gmail.com</column>
+            <column name="token">dacc917a950191f5dac9cbd70f2b65e1ebb9b0e1d500b3e1ff379669090c9bc3</column>
+            <column name="created_at">2016-03-22 11:02:37</column>
+        </table>
+        <!-- Table users -->
+        <table name="users">
+            <column name="id">4</column>
+            <column name="name">dasad</column>
+            <column name="email">asdasf@sada.com</column>
+            <column name="password">$2y$10$wGG9L0WuMaWgpHMhdIkGc.UJReWoZsnsVEukqmVIvU/Tkl2JmlkS.</column>
+            <column name="username">asddsasf</column>
+            <column name="date">2016-03-22</column>
+            <column name="gender">MALE</column>
+            <column name="country">Antigua &amp; Barbuda</column>
+            <column name="city"></column>
+            <column name="phone">0556161288</column>
+            <column name="remember_token">vd4kwJzYqLnmp5KlEXOlAsi1NKBnikT0DYI8lv2OVGXeTRZERHJMe8kygLKi</column>
+            <column name="created_at">2016-03-22 17:41:52</column>
+            <column name="updated_at">2016-03-22 17:42:08</column>
+        </table>
+        <table name="users">
+            <column name="id">5</column>
+            <column name="name">asddsa</column>
+            <column name="email">asd@dsa.com</column>
+            <column name="password">$2y$10$cB7gVDNdNldjncjVZ/JWb.xKWZlI6gAgsmmg.s3hp9hi6QGKAYkEi</column>
+            <column name="username">asddsaasd</column>
+            <column name="date">2016-03-17</column>
+            <column name="gender">MALE</column>
+            <column name="country">Armenia</column>
+            <column name="city">asddsaadsad</column>
+            <column name="phone">0556161288</column>
+            <column name="remember_token">NULL</column>
+            <column name="created_at">2016-03-22 17:42:36</column>
+            <column name="updated_at">2016-03-22 17:42:36</column>
+        </table>
+    </database>
+</pma_xml_export>
